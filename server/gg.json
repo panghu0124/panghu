@@ -1,1 +1,10 @@
-{"success":"response","msg":"无"}
+[
+  {
+    "msg": "用户1的姓名",
+    "UserPwd": "用户1的密码"
+  },
+  {
+    "UserName": "用户2的姓名",
+    "UserPwd": "用户2的密码"
+  }
+]
