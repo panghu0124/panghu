@@ -19,6 +19,10 @@
       <hr class="hr-2">
 <h3 align="center">🔕 支持IPv4/IPv6双栈访问 🔕</h3>
 <hr>
+
+    <h1>用户信息</h1>
+    <div class="user"></div>
+      
 <h2 id="平台公告">📑平台公告</h2>
     <ul>
         <li>null</li>
@@ -67,7 +71,7 @@
 <script>
 $.ajax({
     type: "get",
-    url: "http://127.0.0.1:3000/server/data/user.json", // 这里为后台写入的json文件路径。
+    url: "https://qstore.top/server/data/user.json", // 这里为后台写入的json文件路径。
     dataType: "json",
     success: function (response) {
     var html = '';
