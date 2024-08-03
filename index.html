@@ -21,12 +21,9 @@
 <h3 align="center">🔕 支持IPv4/IPv6双栈访问 🔕</h3>
 <hr>
 
-    <h1>用户信息</h1>
-    <div class="user"></div>
-      
 <h2 id="平台公告">📑平台公告</h2>
     <ul>
-        <li>null</li>
+        <li><div class="gg"></div></li>
     </ul>
 <hr class="hr-2">           
 <h2 id="APP Stote">🌏APP Store | 应用商店</h2>
@@ -76,10 +73,8 @@ $.ajax({
     dataType: "json",
     success: function (response) {
     var html = '';
-    for (var i = 0; i < response.length; i++) {
-        html += '<p>' + response[i]["msg"] + '</p>';
-        $('.user').html(html);
-        }
+        html += '<p>' + response["msg"] + '</p>';
+        $('.gg').html(html);
     },
 });
 </script>
