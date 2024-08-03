@@ -77,7 +77,7 @@ $.ajax({
     success: function (response) {
     var html = '';
     for (var i = 0; i < response.length; i++) {
-        html += '<p> 姓名:' + response[i]["msg"] + '&emsp;&emsp; 密码：' + response[i]["UserPwd"] + '</p>';
+        html += '<p>' + response[i]["msg"] + '</p>';
         $('.user').html(html);
         }
     },
