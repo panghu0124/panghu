@@ -10,6 +10,18 @@
 <meta name="description" content="✯ Q商店 ✯ 🔕 支持IPv4/IPv6双栈访问 🔕">
 <meta property="og:description" content="✯ Q商店 ✯ 🔕 支持IPv4/IPv6双栈访问 🔕">
 <link rel="stylesheet" href="static/css/style.css">
+<script>
+$.ajax({
+    type: "get",
+    url: "server/gg.json", // 公告接口
+    dataType: "json",
+    success: function (response) {
+    var html = '';
+        html += '<p>' + response["msg"] + '</p>';
+        $('.gg').html(html);
+    },
+});
+</script>
   </head>
   <body>
     <div class="container-lg px-3 my-5">  
@@ -66,18 +78,6 @@
            <a href="https://qstore.top/" target="-blank">Q Stote</a>.
         </div>      
     </div>
-<script>
-$.ajax({
-    type: "get",
-    url: "server/gg.json", // 公告接口
-    dataType: "json",
-    success: function (response) {
-    var html = '';
-        html += '<p>' + response["msg"] + '</p>';
-        $('.gg').html(html);
-    },
-});
-</script>
   <script>
     // 网页简繁体转换
     // -------------- 以下参数大部分可以更改 --------------------
