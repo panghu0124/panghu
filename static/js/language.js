@@ -1,4 +1,3 @@
-setTimeout("alert('对不起, 要你久候')", 3000 );
 // 网页简繁体转换
     // -------------- 以下参数大部分可以更改 --------------------
     //s = simplified 简体中文 t = traditional 繁体中文 n = normal 正常显示
@@ -160,4 +159,5 @@ setTimeout("alert('对不起, 要你久候')", 3000 );
             }
         }
     }
-    zh_init();// JavaScript Document
+    //zh_init();// JavaScript Document
+setTimeout(zh_init(), 3000 );
