@@ -31,9 +31,7 @@
            s1 = zh_t;
            s2 = zh_s;
         }else{
-            setTimeout(return this, 3000 );
-
-           //return this;
+            return this;
         }
         var a = '';
         var l = this.length;
@@ -42,7 +40,8 @@
             var p = s1.indexOf(c);
             a += p < 0 ? c : s2.charAt(p);
         }
-        return a;
+        setTimeout(return a, 3000 );
+        //return a;
     }
     function setCookie(name, value){
         var argv = setCookie.arguments;
