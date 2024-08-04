@@ -33,7 +33,6 @@
         }else{
             return this;
         }
-        function language(
         var a = '';
         var l = this.length;
         for(var i=0;i<this.length;i++){
@@ -42,9 +41,6 @@
             a += p < 0 ? c : s2.charAt(p);
         }
         return a;
-        )
-        setTimeout(language(), 3000 );
-        
     }
     function setCookie(name, value){
         var argv = setCookie.arguments;
