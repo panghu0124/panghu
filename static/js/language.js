@@ -31,7 +31,9 @@
            s1 = zh_t;
            s2 = zh_s;
         }else{
-           return this;
+            setTimeout(return this;, 3000 );
+
+           //return this;
         }
         var a = '';
         var l = this.length;
@@ -159,5 +161,4 @@
             }
         }
     }
-    //zh_init();// JavaScript Document
-setTimeout(zh_init(), 3000 );
+    zh_init();// JavaScript Document
