@@ -31,7 +31,7 @@
            s1 = zh_t;
            s2 = zh_s;
         }else{
-            setTimeout(return this;, 3000 );
+            setTimeout(return this, 3000 );
 
            //return this;
         }
