@@ -35,7 +35,7 @@ xhr.onreadystatechange = function () {
         for (var i in jsonData2) {
             var a = document.createElement('a');
             //a.textContent = jsonData2[i].config_name; // name属性
-			a.href = 'cps1_link?type=' + type + '&id=' + jsonData2[i].id; // link属性
+			a.href = '/link/cps1_link?type=' + type + '&id=' + jsonData2[i].id; // link属性
             var img = document.createElement('img');
             img.src = jsonData2[i].banner_img; // 设置图片源路径
             img.alt = jsonData2[i].config_name; // 设置替代文本
