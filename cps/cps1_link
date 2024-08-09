@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=275956705&s=100">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X Yu | ✯ X Yu ✯ 🔕 支持IPv4/IPv6双栈访问 🔕</title>
+<meta name="description" content="✯ X Yu ✯ 🔕 支持IPv4/IPv6双栈访问 🔕">
+<meta property="og:description" content="✯ X Yu ✯ 🔕 支持IPv4/IPv6双栈访问 🔕">
+<link rel="stylesheet" href="static/css/style.css">
+<script>
+// 创建URLSearchParams实例
+const params = new URLSearchParams(window.location.search);
+// 获取特定的GET参数
+const type = params.get('type'); // 返回 'value1'
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://alliance.yunzhanxinxi.com/manager/cps/cps-index', true);
+// 设置请求头
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYWxsaWFuY2UueXVuemhhbnhpbnhpLmNvbSIsImlhdCI6MTcyMzE4OTg5NiwiZXhwIjoxNzIzNjIxODk2LCJqdGkiOiJiMjNlMGQxZDNlMWQ5MDUzNGM3NDQ2MDdkN2NiZDAxNCIsImRhdGEiOnsiYWNjb3VudHNfaWQiOjI2MjYyLCJ1c2VyX2lkIjoyNzMwMiwicmFuZF9pZCI6MTUxNDU2NzEsImlzX3N1cGVyIjoxfX0.pTI0dkjYaVTXZWcodZr5QA-3b33By3y-oGvqLNdWqvsaWI8u76pyRXQ_HZviv6PaVeQwZjH27gbZJyA3uwqobjaREijF40xHFDT_W3XhR5pjmtzI6SrLpcLd1Mp9a3TW7UxWojFv0efZg0B3o8tZEaEO6UuYsi_cP-fR6-tI6i8'); // 替换YOUR_ACCESS_TOKEN为实际的访问令牌
+// 发送请求，‌如果需要发送数据到服务器，‌可以在xhr.send()中添加数据
+// 创建JSON对象
+var data = {
+  cpsConfig: "lifelihood",
+  keyWord: ""
+};
+xhr.onreadystatechange = function () {
+    if(xhr.readyState === 4 && xhr.status === 200) {
+        var jsonString = xhr.response;
+        var jsonData1 = JSON.parse(jsonString);
+		console.log(jsonString);
+		var jsonData2 = jsonData1['data'][type]['cps_detail'];
+        var displayArea = document.getElementById('displayArea');
+        for (var i in jsonData2) {
+            var a = document.createElement('a');
+            //a.textContent = jsonData2[i].config_name; // name属性
+			a.href = '?id=' + jsonData2[i].id; // link属性
+			a.target = "_blank"; // 设置在新窗口打开链接
+            var img = document.createElement('img');
+            img.src = jsonData2[i].banner_img; // 设置图片源路径
+            img.alt = jsonData2[i].config_name; // 设置替代文本
+			img.width = 289; // 设置图片宽度为100像素
+            img.height = 150; // 设置图片高度为50像素
+	        displayArea.appendChild(a).appendChild(img);
+        }
+    }
+};
+
+// 发送JSON数据
+xhr.send(JSON.stringify(data));
+</script>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5">  
+      <h2><a href="https://xyu.pp.ua/">X Yu</a></h2>
+      <hr class="hr-2">
+      <p align="center"><img src="https://q1.qlogo.cn/g?b=qq&nk=275956705&s=100" alt="X Yu"></p>     
+      <h1 align="center"> ✯ X Yu ✯ </h1>
+      <hr class="hr-2">
+<h3 align="center">🔕 支持IPv4/IPv6双栈访问 🔕</h3>
+<hr>
+<hr class="hr-2">           
+<h2 id="APP Stote">🌏APP Store | 应用商店</h2>
+
+<div id="displayArea" style="text-align:center; position:relative;"></div>
+
+        <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+           <a href="https://xyu.pp.ua/" target="-blank">X Yu</a>.
+        </div>      
+    </div>
+  <script type="text/javascript" src="static/js/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="static/js/language.js"></script>
+</body>
+</html>
