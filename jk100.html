@@ -11,7 +11,6 @@
     </form>
 
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('jk100').addEventListener('submit', function(event) {
                 event.preventDefault();
                 var num = document.getElementById('num').value;
@@ -21,7 +20,6 @@
                 var password = String(id2).substring(0, 3);
                 console.log(password);
             });
-        });
     </script>
 </body>
 </html>
