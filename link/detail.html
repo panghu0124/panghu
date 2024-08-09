@@ -1,0 +1,39 @@
+<script>
+// 创建URLSearchParams实例
+const params = new URLSearchParams(window.location.search);
+// 获取特定的GET参数
+const cid = params.get('cid'); // 返回 'value1'
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://alliance.yunzhanxinxi.com/manager/cps/detail', true);
+// 设置请求头
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.setRequestHeader('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYWxsaWFuY2UueXVuemhhbnhpbnhpLmNvbSIsImlhdCI6MTcyMzE4OTg5NiwiZXhwIjoxNzIzNjIxODk2LCJqdGkiOiJiMjNlMGQxZDNlMWQ5MDUzNGM3NDQ2MDdkN2NiZDAxNCIsImRhdGEiOnsiYWNjb3VudHNfaWQiOjI2MjYyLCJ1c2VyX2lkIjoyNzMwMiwicmFuZF9pZCI6MTUxNDU2NzEsImlzX3N1cGVyIjoxfX0.pTI0dkjYaVTXZWcodZr5QA-3b33By3y-oGvqLNdWqvsaWI8u76pyRXQ_HZviv6PaVeQwZjH27gbZJyA3uwqobjaREijF40xHFDT_W3XhR5pjmtzI6SrLpcLd1Mp9a3TW7UxWojFv0efZg0B3o8tZEaEO6UuYsi_cP-fR6-tI6i8'); // 替换YOUR_ACCESS_TOKEN为实际的访问令牌
+// 发送请求，‌如果需要发送数据到服务器，‌可以在xhr.send()中添加数据
+// 创建JSON对象
+var data = {
+  configId: cid
+};
+xhr.onreadystatechange = function () {
+    if(xhr.readyState === 4 && xhr.status === 200) {
+        var jsonString = xhr.response;
+        var jsonData1 = JSON.parse(jsonString);
+		//console.log(jsonString);
+		var jsonData2 = jsonData1['data']['promotion_type'];
+		console.log(jsonData2);
+        var displayArea = document.getElementById('displayArea');
+        for (var i in jsonData2) {
+            var a = document.createElement('a');
+            a.textContent = jsonData2[i].proType; // name属性
+			a.href = '/link/link?cpsConfig=lifelihood&configId=' + cid + '&linkType=' + jsonData2[i].linkType + '&promotionId=yz-15145671-135988-159193'; // link属性
+	        displayArea.appendChild(a);
+        }
+    }
+};
+
+// 发送JSON数据
+xhr.send(JSON.stringify(data));
+</script>
+
+
+
+<div id="displayArea" style="text-align:center; position:relative;"></div>
