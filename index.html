@@ -9,6 +9,17 @@
 <meta name="description" content="✯ X Yu ✯ 🔕 支持IPv4/IPv6双栈访问 🔕">
 <meta property="og:description" content="✯ X Yu ✯ 🔕 支持IPv4/IPv6双栈访问 🔕">
 <link rel="stylesheet" href="static/css/style.css">
+<script>
+function jk100() {
+    var num = document.getElementById('num').value;
+    var a1 = 711 * num;
+    var id = String(a1).padEnd(6, '0');
+    var id2 = parseInt(id.substring(0, 3)) + parseInt(id.substring(3, 6));
+    var password = String(id2).substring(0, 3);
+    document.getElementById('result').innerText = '计算结果：‌' + password;
+    return false; // 阻止表单默认提交
+}
+</script>
   </head>
   <body>
     <div class="container-lg px-3 my-5">  
@@ -28,6 +39,13 @@
 <h2 id="APP Stote">🌏APP Store | 应用商店</h2>
 <ul>
     <li>✨网网络应用：
+	<ul>
+<form onsubmit="return jk100();">
+    <input type="text" id="num" name="num" required>
+    <button type="submit">口令计算</button>
+</form>
+	</ul>
+	
         <ul>
             <li>
                 <a href="https://porxy.xyu.pp.ua" target="-blank">HTTP Porxy加速</a>
@@ -94,5 +112,6 @@
   <script type="text/javascript" src="static/js/jquery-3.7.1.min.js"></script>
   <script type="text/javascript" src="static/js/gg.js"></script>
   <script type="text/javascript" src="static/js/language.js"></script>
-  </body>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8b04d378c8414142","version":"2024.7.0","r":1,"token":"42dbcafa4b784ed6ac39700e58bf0e03","serverTiming":{"name":{"cfL4":true}}}' crossorigin="anonymous"></script>
+</body>
 </html>
