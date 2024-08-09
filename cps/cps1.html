@@ -29,8 +29,8 @@ xhr.onreadystatechange = function () {
     if(xhr.readyState === 4 && xhr.status === 200) {
         var jsonString = xhr.response;
         var jsonData1 = JSON.parse(jsonString);
-		console.log(jsonString);
-		var jsonData2 = jsonData1['data'][type]['cps_detail'];
+	//console.log(jsonString);
+	var jsonData2 = jsonData1['data'][type]['cps_detail'];
         var displayArea = document.getElementById('displayArea');
         for (var i in jsonData2) {
             var a = document.createElement('a');
@@ -45,8 +45,7 @@ xhr.onreadystatechange = function () {
 	        displayArea.appendChild(a).appendChild(img);
         }
     }
-};
-
+}；
 // 发送JSON数据
 xhr.send(JSON.stringify(data));
 </script>
