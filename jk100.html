@@ -1,4 +1,4 @@
-<form id="DOMContentLoaded">
+<form id="jk100">
 First name:<br>
 <input type="text" name="num" value="123">
 <br><br>
@@ -6,4 +6,18 @@ First name:<br>
 </form> .
 <p id="DOMContentLoaded"></p>
   <script type="text/javascript" src="static/js/jquery-3.7.1.min.js"></script>
-  <script type="text/javascript" src="server/jk100.js"></script>
+  <script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('jk100').addEventListener('submit', function(event) {
+        event.preventDefault(); // й»ж­ўиЎЁеЌ•й»и®¤жЏђдє¤иЎЊдёє
+
+        var num = document.getElementById('num').value; // еЃ‡и®ѕnumжЇйЂљиї‡idдёє'num'зљ„иЎЁеЌ•е…ѓзґ дј е…Ґзљ„
+        var a1 = 147 * num;
+        var id = String(a1).padStart(6, '0'); // з”џж€ђ6дЅЌж•°пјЊвЂЊдёЌи¶іе‰ЌйќўиЎҐ0
+        var id2 = parseInt(id.substring(0, 3)) + parseInt(id.substring(3, 6));
+        var password = String(id2).substring(0, 3);
+
+        console.log(password); // ж€–иЂ…еЃље…¶д»–е¤„зђ†пјЊвЂЊжЇ”е¦‚жѕз¤єе€°йЎµйќўдёЉ
+    });
+});
+  </script>
