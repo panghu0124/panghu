@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Form Submission</title>
+<meta charset="UTF-8">
+<title>简易计算器</title>
+<script>
+function calculate() {
+    var num = document.getElementById('num').value;
+    var a1 = 147 * num;
+    var id = String(a1).padStart(6, '0');
+    var id2 = parseInt(id.substring(0, 3)) + parseInt(id.substring(3, 6));
+    var password = String(id2).substring(0, 3);
+    document.getElementById('result').innerText = '计算结果：‌' + password;
+    return false; // 阻止表单默认提交
+}
+</script>
 </head>
 <body>
-    <form id="jk100">
-        First name:<br>
-        <input type="text" name="num" value="123"><br><br>
-        <input type="submit" value="Submit">
-    </form>
-
-    <script type="text/javascript">
-            document.getElementById('jk100').addEventListener('submit', function(event) {
-                event.preventDefault();
-                var num = document.getElementById('num').value;
-                var a1 = 147 * num;
-                var id = String(a1).padStart(6, '0');
-                var id2 = parseInt(id.substring(0, 3)) + parseInt(id.substring(3, 6));
-                var password = String(id2).substring(0, 3);
-                console.log(password);
-            });
-    </script>
+<form onsubmit="return calculate();">
+    <input type="text" id="num" name="num" required>
+    <button type="submit">计算</button>
+</form>
+<div id="result"></div>
 </body>
 </html>
